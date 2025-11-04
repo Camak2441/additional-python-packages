@@ -47,8 +47,7 @@ buildPythonPackage rec {
     cp -r ../ext .
     cp -r ../src .
     cp -r ../drjit .
-    mkdir -p build/build/temp
-    export HOME=temp
+    export HOME=$(mktemp -d)
   '';
 
   doCheck = true;
