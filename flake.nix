@@ -12,18 +12,24 @@
   } @ inputs:
   let
     systems = [
-    "x86_64-linux"
-    "aarch64-linux"
+      "x86_64-linux"
+      "aarch64-linux"
     ];
     forAllSystems = nixpkgs.lib.genAttrs systems;
   in {
     packages = forAllSystems (
       system:
-      {
-        drjit = import ./python-modules/drjit { pkgs = nixpkgs.legacyPackages.${system}; };
-        mitsuba = import ./python-modules/mitsuba { pkgs = nixpkgs.legacyPackages.${system}; };
-        scikit-sparse = import ./python-modules/scikit-sparse { pkgs = nixpkgs.legacyPackages.${system}; };
-      }
+      let 
+        pkgs = nixpkgs.legacyPackages.${system};
+      in
+      pkgs.lib.genAttrs 
+      (
+        (pkgs.lib.attrsets.mapAttrsToList (name: _: name) (builtins.readDir ./python-modules))
+      )
+      (
+        package:
+        import ./python-modules/${package} { pkgs = nixpkgs.legacyPackages.${system}; }
+      )
     );
   };
 }
