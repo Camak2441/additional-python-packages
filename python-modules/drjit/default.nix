@@ -39,16 +39,15 @@ buildPythonPackage rec {
   ];
 
   preBuild = ''
-    cp ../pyproject.toml ../build
-    cp ../README.rst ../build
-    cp -r ../include ../build
-    cp -r ../resources ../build
-    cp ../CMakeLists.txt ../build
-    cp -r ../ext ../build
-    cp -r ../src ../build
-    cp -r ../drjit ../build
-    mkdir ../build/build
-    mkdir ../build/build/temp
+    cp ../pyproject.toml .
+    cp ../README.rst .
+    cp -r ../include .
+    cp -r ../resources .
+    cp ../CMakeLists.txt .
+    cp -r ../ext .
+    cp -r ../src .
+    cp -r ../drjit .
+    mkdir -p build/temp
     export HOME=temp
   '';
 

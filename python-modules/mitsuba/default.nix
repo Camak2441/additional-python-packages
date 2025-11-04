@@ -41,12 +41,12 @@ buildPythonPackage rec {
 
   preBuild = ''
     cp ../pyproject.toml .
-    cp ../README.md ../build
-    cp -r ../include ../build
-    cp -r ../resources ../build
-    cp ../CMakeLists.txt ../build
-    cp -r ../ext ../build
-    cp -r ../src ../build
+    cp ../README.md .
+    cp -r ../include .
+    cp -r ../resources .
+    cp ../CMakeLists.txt .
+    cp -r ../ext .
+    cp -r ../src .
     substituteInPlace ../build/ext/nanogui/resources/bin2c.cmake \
         --replace "cmake_minimum_required (VERSION 2.8.12)" "cmake_minimum_required(VERSION 3.15...3.28)"
     mkdir -p build/temp
