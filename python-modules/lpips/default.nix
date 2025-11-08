@@ -20,6 +20,7 @@ buildPythonPackage rec {
   nativeBuildInputs = [
     setuptools
     wheel
+    cython
   ];
 
   propagatedBuildInputs = [
