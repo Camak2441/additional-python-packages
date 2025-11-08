@@ -56,7 +56,7 @@ buildPythonPackage rec {
 
   meta = {
     description = "Dr.Jit is a library to run massively parallel programs on the GPU or CPU, and to optionally compute derivatives of such programs for gradient-based optimization.";
-    homepage = "https://drjit.readthedocs.io/en/stable/";
+    homepage = "https://github.com/mitsuba-renderer/drjit";
     changelog = "https://drjit.readthedocs.io/en/stable/changelog.html";
     license = lib.licenses.bsd3;
   };

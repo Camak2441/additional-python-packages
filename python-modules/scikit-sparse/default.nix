@@ -34,7 +34,7 @@ buildPythonPackage rec {
   pythonImportsCheck = [ "sksparse" ];
 
   meta = {
-    description = "a companion to the scipy.sparse library for sparse matrix manipulation in Python.";
+    description = "A companion to the scipy.sparse library for sparse matrix manipulation in Python.";
     homepage = "https://github.com/scikit-sparse/scikit-sparse";
     changelog = "https://github.com/scikit-sparse/scikit-sparse/releases/tag/${version}";
     license = lib.licenses.bsd2;

@@ -20,7 +20,7 @@
     packages = forAllSystems (
       system:
       let 
-        pkgs = nixpkgs.legacyPackages.${system};
+        pkgs = import nixpkgs { inherit system; config.allowUnfree = true; };
       in
       pkgs.lib.genAttrs 
       (
@@ -28,7 +28,7 @@
       )
       (
         package:
-        import ./python-modules/${package} { pkgs = nixpkgs.legacyPackages.${system}; }
+        import ./python-modules/${package} { inherit pkgs; }
       )
     );
 
