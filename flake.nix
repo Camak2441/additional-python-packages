@@ -2,7 +2,7 @@
   description = "A nix flake for whatever python packages I needed which were not in nixpkgs.";
 
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
   };
 
   outputs = {
@@ -23,6 +23,7 @@
         pkgs = import nixpkgs { 
           inherit system;
           config.allowUnfree = true; 
+          config.cudaSupport = true;
         };
       in
       pkgs.lib.genAttrs 
