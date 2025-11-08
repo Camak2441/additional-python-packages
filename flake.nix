@@ -21,6 +21,7 @@
       system:
       let 
         pkgs = import nixpkgs { inherit system; config.allowUnfree = true; };
+        pkgs.python313Packages.torch.override = inputs.torch;
       in
       pkgs.lib.genAttrs 
       (
@@ -28,7 +29,7 @@
       )
       (
         package:
-        import ./python-modules/${package} { inherit pkgs; torch = pkgs.python313Packages.torch; }
+        import ./python-modules/${package} { inherit pkgs; }
       )
     );
 
