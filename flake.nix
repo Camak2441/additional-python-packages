@@ -16,7 +16,7 @@
       "aarch64-linux"
     ];
     forAllSystems = nixpkgs.lib.genAttrs systems;
-  in {
+  in rec {
     packages = forAllSystems (
       system:
       let 
@@ -30,6 +30,25 @@
         package:
         import ./python-modules/${package} { pkgs = nixpkgs.legacyPackages.${system}; }
       )
+    );
+
+    devShells = forAllSystems (
+      system:
+      let
+        pkgs = import nixpkgs { inherit system; config.allowUnfree = true; };
+        addPyPkgs = self.packages.${system};
+      in
+      {
+        default = pkgs.mkShell rec {
+          packages = with pkgs; [
+            (python3.withPackages (ps: builtins.attrValues addPyPkgs))
+          ];
+
+          shellHook = ''
+            echo "Successfully built all additional python packages"
+          '';
+        };
+      }
     );
   };
 }

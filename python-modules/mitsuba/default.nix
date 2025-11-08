@@ -63,9 +63,9 @@ buildPythonPackage rec {
   pythonImportsCheck = [ "mitsuba" ];
 
   meta = {
-    description = "";
+    description = "Mitsuba 3 is a research-oriented retargetable rendering system, written in portable C++17 on top of the Dr.Jit Just-In-Time compiler. It is developed by the Realistic Graphics Lab at EPFL. ";
     homepage = "https://mitsuba-renderer.org/";
-    changelog = "";
-    license = lib.licenses.bsd2;
+    changelog = "https://mitsuba.readthedocs.io/en/stable/release_notes.html";
+    license = lib.licenses.bsd3;
   };
 }
