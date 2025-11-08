@@ -24,8 +24,8 @@ buildPythonPackage rec {
   ];
 
   propagatedBuildInputs = [
-    torch-bin
     torch
+    torchvision
     numpy
     scipy
     scikit-image

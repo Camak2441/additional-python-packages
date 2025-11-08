@@ -21,13 +21,7 @@
       system:
       let 
         pkgs = import nixpkgs { 
-          inherit system; 
-          config.allowUnfree = true;
-          overlays = [(final: prev: {
-            pythonPackagesExtensions = [(py-final: py-prev: {
-              torch = py-final.torch-bin;
-            })];
-          })];
+          inherit system;
         };
       in
       pkgs.lib.genAttrs 
@@ -46,7 +40,6 @@
         pkgs = import nixpkgs { 
           inherit system; 
           config.allowUnfree = true; 
-          config.cudaSupport = true;
         };
         addPyPkgs = self.packages.${system};
       in
