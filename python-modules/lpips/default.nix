@@ -1,5 +1,5 @@
 {
-  pkgs, ...
+  pkgs, inputs, ...
 }:
 
 with pkgs.python313Packages;
@@ -24,7 +24,7 @@ buildPythonPackage rec {
   ];
 
   propagatedBuildInputs = [
-    torch
+    inputs.torch or torch
     torchvision
     numpy
     scipy

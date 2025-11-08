@@ -22,7 +22,6 @@
       let 
         pkgs = import nixpkgs { 
           inherit system; 
-          python313Packages.torch.override = inputs.torch;
         };
       in
       pkgs.lib.genAttrs 
@@ -31,7 +30,7 @@
       )
       (
         package:
-        import ./python-modules/${package} { inherit pkgs; }
+        import ./python-modules/${package} { inherit pkgs inputs; }
       )
     );
 
