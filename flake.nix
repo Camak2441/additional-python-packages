@@ -22,8 +22,12 @@
       let 
         pkgs = import nixpkgs { 
           inherit system; 
-          config.allowUnfree = true; 
-          config.cudaSupport = true;
+          config.allowUnfree = true;
+          overlays = [(final: prev: {
+            pythonPackagesExtensions = [(py-final: py-prev: {
+              torch = py-final.torch-bin;
+            })];
+          })];
         };
       in
       pkgs.lib.genAttrs 
