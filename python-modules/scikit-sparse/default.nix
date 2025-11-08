@@ -1,5 +1,5 @@
 {
-  pkgs
+  pkgs, ...
 }:
 
 with pkgs.python313Packages;

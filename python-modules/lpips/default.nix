@@ -1,5 +1,5 @@
 {
-  pkgs,
+  pkgs, torch, ...
 }:
 
 with pkgs.python313Packages;

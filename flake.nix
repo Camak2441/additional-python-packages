@@ -28,7 +28,7 @@
       )
       (
         package:
-        import ./python-modules/${package} { inherit pkgs; }
+        import ./python-modules/${package} { inherit pkgs; torch = pkgs.python313Packages.torch; }
       )
     );
 
