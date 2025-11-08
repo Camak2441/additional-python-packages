@@ -42,6 +42,7 @@
         pkgs = import nixpkgs { 
           inherit system; 
           config.allowUnfree = true; 
+          config.cudaSupport = true;
         };
         addPyPkgs = self.packages.${system};
       in
