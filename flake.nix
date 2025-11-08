@@ -22,6 +22,8 @@
       let 
         pkgs = import nixpkgs { 
           inherit system; 
+          config.allowUnfree = true; 
+          config.cudaSupport = true;
         };
       in
       pkgs.lib.genAttrs 
@@ -37,7 +39,11 @@
     devShells = forAllSystems (
       system:
       let
-        pkgs = import nixpkgs { inherit system; config.allowUnfree = true; };
+        pkgs = import nixpkgs { 
+          inherit system; 
+          config.allowUnfree = true; 
+          config.cudaSupport = true;
+        };
         addPyPkgs = self.packages.${system};
       in
       {
