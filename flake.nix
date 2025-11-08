@@ -20,8 +20,10 @@
     packages = forAllSystems (
       system:
       let 
-        pkgs = import nixpkgs { inherit system; config.allowUnfree = true; };
-        pkgs.python313Packages.torch.override = inputs.torch;
+        pkgs = import nixpkgs { 
+          inherit system; 
+          python313Packages.torch.override = inputs.torch;
+        };
       in
       pkgs.lib.genAttrs 
       (
