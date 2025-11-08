@@ -22,6 +22,12 @@
       let 
         pkgs = import nixpkgs { 
           inherit system;
+          overlays = [(final: prev: {
+            pythonPackagesExtensions = [(py-final: py-prev: {
+              torch = py-final.torch-bin;
+            })];
+          })];
+          config.allowUnfree = true; 
         };
       in
       pkgs.lib.genAttrs 
