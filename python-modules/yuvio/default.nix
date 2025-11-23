@@ -14,7 +14,7 @@ buildPythonPackage rec {
     owner = "labradon";
     repo = "yuvio";
     rev = "570d35c33a7ee1e16a63d51bd166ce14d27de858";
-    hash = "";
+    hash = "sha256-FLVMDxa6lfQFA+cQpTseY9TnLPcEhHv7svMRQ1J9dC0=";
   };
 
   nativeBuildInputs = [
@@ -24,6 +24,8 @@ buildPythonPackage rec {
   ];
 
   propagatedBuildInputs = [
+    numpy
+    psutil
   ];
 
   doCheck = true;

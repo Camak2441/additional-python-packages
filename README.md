@@ -15,4 +15,6 @@ drjit
 lpips
 mitsuba
 scikit-sparse
+vmaf-torch
+yuvio
 ```

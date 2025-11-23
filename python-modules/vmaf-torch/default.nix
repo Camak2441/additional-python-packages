@@ -17,7 +17,7 @@ buildPythonPackage rec {
     owner = "alvitrioliks";
     repo = "VMAF-torch";
     rev = "a14135ec6b35912990e1c834d8998bd5d2e234c3";
-    hash = "";
+    hash = "sha256-iRGHGJr2Z8IczNhB3YmlMYsST7qaqZ5Pzo4nJNSV7h0=";
   };
 
   nativeBuildInputs = [
