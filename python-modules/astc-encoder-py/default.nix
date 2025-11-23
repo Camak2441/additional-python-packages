@@ -22,11 +22,12 @@ buildPythonPackage rec {
     setuptools
     wheel
     cython
-    pkgs.astc-encoder
   ];
 
   propagatedBuildInputs = [
+    pkgs.astc-encoder
     archspec
+    pillow
   ];
 
   preBuild = ''
