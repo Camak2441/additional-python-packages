@@ -28,6 +28,9 @@ buildPythonPackage rec {
     pkgs.astc-encoder
     archspec
     pillow
+    pkgs.psutils
+    imagehash
+    pytest
   ];
 
   preBuild = ''
