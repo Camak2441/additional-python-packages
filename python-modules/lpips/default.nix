@@ -1,5 +1,5 @@
 {
-  pkgs, inputs, ...
+  pkgs, ...
 }:
 
 with pkgs.python313Packages;

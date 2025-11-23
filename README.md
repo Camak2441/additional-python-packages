@@ -12,6 +12,7 @@ The following python packages are packaged in this flake:
 
 ```
 drjit
+lpips
 mitsuba
 scikit-sparse
 ```
