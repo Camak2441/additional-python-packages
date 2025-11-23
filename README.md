@@ -11,6 +11,7 @@ This is a flake which holds whichever python packages I needed, but weren't alre
 The following python packages are packaged in this flake:
 
 ```
+astc-encoder-py
 drjit
 lpips
 mitsuba
