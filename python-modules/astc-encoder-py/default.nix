@@ -34,13 +34,6 @@ buildPythonPackage rec {
   ];
 
   preBuild = ''
-    echo PreBuild;
-    ls;
-    ls ./astc_encoder;
-    ls ./src;
-    ls ./src/astc-encoder;
-    ls ./src/astc-encoder/Source;
-    cat pyproject.toml;
     substituteInPlace pyproject.toml \
         --replace "setuptools<72.2.0" "setuptools"
   '';
