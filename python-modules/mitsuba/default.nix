@@ -48,7 +48,7 @@ buildPythonPackage rec {
     cp -r ../ext .
     cp -r ../src .
     substituteInPlace ../build/ext/nanogui/resources/bin2c.cmake \
-        --replace "cmake_minimum_required (VERSION 2.8.12)" "cmake_minimum_required(VERSION 3.15...3.28)"
+        --replace-fail "cmake_minimum_required (VERSION 2.8.12)" "cmake_minimum_required(VERSION 3.15...3.28)"
     export HOME=$(mktemp -d)
   '';
 

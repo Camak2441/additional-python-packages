@@ -35,7 +35,7 @@ buildPythonPackage rec {
 
   preBuild = ''
     substituteInPlace pyproject.toml \
-        --replace "setuptools<72.2.0" "setuptools"
+        --replace-fail "setuptools<72.2.0" "setuptools"
   '';
 
   doCheck = true;
